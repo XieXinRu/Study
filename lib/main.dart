@@ -1,14 +1,19 @@
 import 'package:flutter/material.dart';
 import 'list.dart';
+import 'page2.dart';
 
 void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter Demo',
+      //路由表定义
+      routes:{
+        "ListPage":(context)=> ListPage(),
+        "Page2":(context)=> Page2(),
+      },
       home: MyHomePage(),
     );
   }
@@ -20,7 +25,6 @@ class MyHomePage extends StatefulWidget{
 }
 
 class MyHomePageState extends State<MyHomePage>{
-   var msg="Hello World"; //msg默认文字
    @override
    Widget build(BuildContext context) {
        return Scaffold(
@@ -30,16 +34,21 @@ class MyHomePageState extends State<MyHomePage>{
             body: Center(
                       child:Column(
                               children:<Widget>[
-                                  Text(msg), //根据变量值，显示文字
-                                  FlatButton(
-                                    color: Colors.blue,textColor: Colors.white,
-                                    onPressed: () {    
-                                      Navigator.push(context, MaterialPageRoute(builder:(context) {
-                                        return  ListPage();
-                                      }));
-                                    },
-                                    child: Text("Click ME",style: TextStyle(fontSize: 20.0) ),
+                                  RaisedButton(
+                                      child: Text("Clikc to ListPage" ),
+                                      onPressed: () {
+                                        //根据命名路由做跳转
+                                         Navigator.pushNamed(context, "ListPage");
+                                      },
+                                  ),
+                                   RaisedButton(
+                                      child: Text("Click to Page2" ),
+                                      onPressed: () {
+                                          //根据命名路由做跳转
+                                         Navigator.pushNamed(context, "Page2");
+                                      },
                                   )
+
                               ]
                       )
                   )

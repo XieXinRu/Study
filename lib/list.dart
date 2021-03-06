@@ -27,7 +27,7 @@ class ListPage extends StatelessWidget {
     }
 
     //返回整个页面
-    return Scaffold(
+    return Scaffold( //一定要有return
       appBar: AppBar(
         title: Text("List Page"),
       ),
