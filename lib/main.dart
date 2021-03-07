@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'list.dart';
 import 'WidgetTry.dart';
 import 'DetailPage.dart';
+import 'ContainerTry.dart';
+
 
 void main() => runApp(MyApp());
 
@@ -15,6 +17,8 @@ class MyApp extends StatelessWidget {
         "ListPage":(context)=> ListPage(),
         "WidgetTry":(context)=> WidgetTry(),
         "DetailPage":(context)=> DetailPage(),
+        "ContainerTry":(context)=> ContainerTry(),
+
       },
       home: MyHomePage(),
     );
@@ -44,10 +48,6 @@ class MyHomePageState extends State<MyHomePage>{
                           color:Color(0xFF0000ff)
                         )
                     ),
-                    // RaisedButton: 凸起的按钮
-                    // FlatButton：扁平化按钮
-                    // OutlineButton：带边框按钮
-                    // IconButton：带图标按钮
                     RaisedButton(
                       child: Text("Clikc to ListPage" ),
                       onPressed: () {
@@ -61,8 +61,14 @@ class MyHomePageState extends State<MyHomePage>{
                       //根据命名路由做跳转
                         Navigator.pushNamed(context, "WidgetTry");
                       },
+                    ),
+                    RaisedButton(
+                      child: Text("Click to ContainerTry" ),
+                      onPressed: () {
+                      //根据命名路由做跳转
+                        Navigator.pushNamed(context, "ContainerTry");
+                      },
                     )
-                    
                   ]
                 )
             )

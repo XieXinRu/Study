@@ -12,6 +12,10 @@ class WidgetTry extends StatelessWidget {
       body: Center(
         child:Column(
           children:<Widget>[
+              // RaisedButton: 凸起的按钮
+              // FlatButton：扁平化按钮
+              // OutlineButton：带边框按钮
+              // IconButton：带图标按钮
               RaisedButton(
                   child: Text("我是 RaiseButton" ),
                   onPressed: () {},
