@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'list.dart';
 import 'page2.dart';
+import 'DetailPage.dart';
 
 void main() => runApp(MyApp());
 
@@ -13,6 +14,7 @@ class MyApp extends StatelessWidget {
       routes:{
         "ListPage":(context)=> ListPage(),
         "Page2":(context)=> Page2(),
+        "DetailPage":(context)=> DetailPage(),
       },
       home: MyHomePage(),
     );
@@ -29,29 +31,28 @@ class MyHomePageState extends State<MyHomePage>{
    Widget build(BuildContext context) {
        return Scaffold(
             appBar: AppBar(
-              title: Text("我是Title"),
-            ),
-            body: Center(
-                      child:Column(
-                              children:<Widget>[
-                                  RaisedButton(
-                                      child: Text("Clikc to ListPage" ),
-                                      onPressed: () {
-                                        //根据命名路由做跳转
-                                         Navigator.pushNamed(context, "ListPage");
-                                      },
-                                  ),
-                                   RaisedButton(
-                                      child: Text("Click to Page2" ),
-                                      onPressed: () {
-                                          //根据命名路由做跳转
-                                         Navigator.pushNamed(context, "Page2");
-                                      },
-                                  )
-
-                              ]
-                      )
-                  )
+                title: Text("我是Title"),
+              ),
+              body: Center(
+                child:Column(
+                  children:<Widget>[
+                    RaisedButton(
+                      child: Text("Clikc to ListPage" ),
+                      onPressed: () {
+                      //根据命名路由做跳转
+                        Navigator.pushNamed(context, "ListPage");
+                      },
+                    ),
+                    RaisedButton(
+                      child: Text("Click to Page2" ),
+                      onPressed: () {
+                      //根据命名路由做跳转
+                        Navigator.pushNamed(context, "Page2");
+                      },
+                    )
+                  ]
+                )
+            )
       );
   }  
 
