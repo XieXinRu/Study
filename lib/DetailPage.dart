@@ -10,7 +10,7 @@ class  DetailPage extends StatelessWidget{
       appBar: AppBar(
         title: Text("Detail Page"),
       ),
-      body: 
+      body:
         new Column(
           children: <Widget>[
              Text("我是Detail页面"),
