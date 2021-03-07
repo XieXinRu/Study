@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'list.dart';
-import 'page2.dart';
+import 'WidgetTry.dart';
 import 'DetailPage.dart';
 
 void main() => runApp(MyApp());
@@ -13,7 +13,7 @@ class MyApp extends StatelessWidget {
       //路由表定义
       routes:{
         "ListPage":(context)=> ListPage(),
-        "Page2":(context)=> Page2(),
+        "WidgetTry":(context)=> WidgetTry(),
         "DetailPage":(context)=> DetailPage(),
       },
       home: MyHomePage(),
@@ -36,6 +36,18 @@ class MyHomePageState extends State<MyHomePage>{
               body: Center(
                 child:Column(
                   children:<Widget>[
+                    Text(
+                        "練習",
+                        style: TextStyle(
+                          fontSize: 50,
+                          fontWeight: FontWeight.bold,
+                          color:Color(0xFF0000ff)
+                        )
+                    ),
+                    // RaisedButton: 凸起的按钮
+                    // FlatButton：扁平化按钮
+                    // OutlineButton：带边框按钮
+                    // IconButton：带图标按钮
                     RaisedButton(
                       child: Text("Clikc to ListPage" ),
                       onPressed: () {
@@ -44,12 +56,13 @@ class MyHomePageState extends State<MyHomePage>{
                       },
                     ),
                     RaisedButton(
-                      child: Text("Click to Page2" ),
+                      child: Text("Click to WidgetTry" ),
                       onPressed: () {
                       //根据命名路由做跳转
-                        Navigator.pushNamed(context, "Page2");
+                        Navigator.pushNamed(context, "WidgetTry");
                       },
                     )
+                    
                   ]
                 )
             )
