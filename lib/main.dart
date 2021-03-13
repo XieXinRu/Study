@@ -5,9 +5,12 @@ import 'DetailPage.dart';
 import 'ContainerTry.dart';
 
 
+
 void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
+  //StatelessWidget：无状态变更，UI静态固化的Widget， 页面渲染性能更高。
+  //StatefulWidget：因状态变更可以导致UI变更的的Widget，涉及到数据渲染场景，都使用StatefulWidget。
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -31,6 +34,7 @@ class MyHomePage extends StatefulWidget{
 }
 
 class MyHomePageState extends State<MyHomePage>{
+  bool _visible=true;
    @override
    Widget build(BuildContext context) {
        return Scaffold(
@@ -68,7 +72,21 @@ class MyHomePageState extends State<MyHomePage>{
                       //根据命名路由做跳转
                         Navigator.pushNamed(context, "ContainerTry");
                       },
-                    )
+                    ),
+                    AnimatedOpacity(
+                        opacity: _visible ? 1.0:0.0,
+                        duration: Duration(milliseconds: 1000),
+                        child: Image.asset("assets/images/main.png"),
+                      ),
+
+                      RaisedButton(
+                        child: Text("显示隐藏"),
+                        onPressed: (){
+                          setState(() {
+                            _visible=!_visible;
+                          });
+                         },
+                      ),
                   ]
                 )
             )
