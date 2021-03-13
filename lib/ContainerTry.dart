@@ -18,11 +18,29 @@ class  ContainerTry extends StatelessWidget{
               color: Colors.blue,
               width: 200,
               height: 200,
+              //角定位----------------显示的内容在左上角，左下角，右上角，右下角
+              // child: Align(
+              //         alignment: Alignment.bottomRight,
+              //         child:Text("Hello Align ",style:TextStyle(fontSize: 20,color: Colors.white)),
+              // )
               //  child: Text("Hello Container ",style:TextStyle(fontSize: 20,color: Colors.white)),
-              child:Image( //匯入圖片
-                  image: AssetImage("assets/images/main.png"),
-                    width: 200.0,
-              )
+              
+              //匯入圖片----------------------------------- yaml加入assets/images/main.png
+              // child:Image( 
+              //     image: AssetImage("assets/images/main.png"),
+              //       width: 200.0,
+              // )
+              //絕對定位(位置)------------------------------
+              child:Stack(
+              children: <Widget>[
+                  Image.network("https://ossweb-img.qq.com/upload/adw/image/20191022/627bdf586e0de8a29d5a48b86700a790.jpeg"),
+                  Positioned(
+                    top: 20,
+                    right: 20,
+                    child:Image.asset("assets/images/main.png",width:100.0)
+                  )
+              ],
+            )
           )
       )
     );
